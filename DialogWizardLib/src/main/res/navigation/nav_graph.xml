@@ -14,10 +14,13 @@
         <!--animations here, affects the action-respective fragment
         so, enterAnim is the animation of second fragment
         while its coming on the foreground, triggered from first-->
+
+        <!--TIP: Do not touch animations-->
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment"
-            app:enterAnim="@anim/dialog_wizard_slide_in_right"/>
+            app:enterAnim="@anim/dialog_wizard_slide_in_right"
+            app:exitAnim="@anim/dialog_wizard_slide_out_left"/>
     </fragment>
 
     <fragment
@@ -29,12 +32,14 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment"
-            app:enterAnim="@anim/dialog_wizard_slide_in_left"/>
+            app:enterAnim="@anim/dialog_wizard_slide_in_left"
+            app:exitAnim="@anim/dialog_wizard_slide_out_right"/>
 
         <action
             android:id="@+id/action_SecondFragment_to_ThirdFragment"
             app:destination="@id/ThirdFragment"
-            app:enterAnim="@anim/dialog_wizard_slide_in_right"/>
+            app:enterAnim="@anim/dialog_wizard_slide_in_right"
+            app:exitAnim="@anim/dialog_wizard_slide_out_left"/>
     </fragment>
 
     <fragment
@@ -43,10 +48,11 @@
         android:label="@string/third_fragment_label"
         tools:layout="@layout/fragment_third">
 
-        <!--no animations on last fragment-->
+        <!--TIP: Do not touch animations-->
         <action
             android:id="@+id/action_ThirdFragment_to_SecondFragment"
             app:destination="@id/SecondFragment"
-            app:enterAnim="@android:anim/slide_in_left"/>
+            app:enterAnim="@anim/dialog_wizard_slide_in_left"
+            app:exitAnim="@anim/dialog_wizard_slide_out_right"/>
     </fragment>
 </navigation>
