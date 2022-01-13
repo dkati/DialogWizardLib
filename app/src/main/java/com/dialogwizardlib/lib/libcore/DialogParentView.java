@@ -1,4 +1,4 @@
-package com.dialogwizardlib.lib.wizardlayouts;
+package com.dialogwizardlib.lib.libcore;
 
 import android.app.Dialog;
 import android.graphics.Color;
@@ -14,17 +14,15 @@ import android.view.WindowManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-import androidx.navigation.NavController;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.dialogwizardlib.R;
+import com.dialogwizardlib.databinding.DialoglibParentBinding;
 import com.dialogwizardlib.lib.Utils;
-import com.dialogwizardlib.databinding.DialogParentViewBinding;
 
 public class DialogParentView extends DialogFragment {
 
-
-    DialogParentViewBinding __binder;
+    private DialoglibParentBinding __binder;
+    private WizardContainer mContainer;
 
     @Override
     public void onStart() {
@@ -58,14 +56,18 @@ public class DialogParentView extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        __binder = DialogParentViewBinding.inflate(inflater);
+        __binder = DialoglibParentBinding.inflate(inflater);
         return __binder.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        NavController navController = NavHostFragment.findNavController(this);
-        navController.navigate(R.id.FirstFragment);
+
+        // this second container is needed in order to NOT have empty background while
+        // switching fragments
+        mContainer = new WizardContainer(this);
+        mContainer.show(requireActivity().getSupportFragmentManager(),"wizardcontainer");
+
     }
 }
