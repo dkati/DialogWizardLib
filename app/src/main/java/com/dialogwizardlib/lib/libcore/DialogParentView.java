@@ -16,12 +16,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 import com.dialogwizardlib.R;
-import com.dialogwizardlib.databinding.DialoglibParentBinding;
+import com.dialogwizardlib.databinding.DialogwizardlibParentBinding;
 import com.dialogwizardlib.lib.Utils;
 
 public class DialogParentView extends DialogFragment {
 
-    private DialoglibParentBinding __binder;
+    private DialogwizardlibParentBinding __binder;
     private WizardContainer mContainer;
 
     @Override
@@ -56,7 +56,7 @@ public class DialogParentView extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        __binder = DialoglibParentBinding.inflate(inflater);
+        __binder = DialogwizardlibParentBinding.inflate(inflater);
         return __binder.getRoot();
     }
 

@@ -18,7 +18,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.dialogwizardlib.R;
-import com.dialogwizardlib.databinding.DialoglibWizardContainerBinding;
+import com.dialogwizardlib.databinding.DialogwizardlibWizardContainerBinding;
 import com.dialogwizardlib.lib.Utils;
 
 public class WizardContainer extends DialogFragment {
@@ -60,7 +60,7 @@ public class WizardContainer extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        DialoglibWizardContainerBinding __binder = DialoglibWizardContainerBinding.inflate(inflater);
+        DialogwizardlibWizardContainerBinding __binder = DialogwizardlibWizardContainerBinding.inflate(inflater);
         return __binder.getRoot();
     }
 
