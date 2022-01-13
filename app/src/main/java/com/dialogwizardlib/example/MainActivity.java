@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
+import com.dialog.dialogwizardlib.DialogWizard;
 import com.dialogwizardlib.databinding.ActivityMainBinding;
-import com.dialogwizardlib.lib.DialogWizard;
 
 public class MainActivity extends AppCompatActivity {
 

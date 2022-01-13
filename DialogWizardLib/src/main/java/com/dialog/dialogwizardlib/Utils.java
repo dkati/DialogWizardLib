@@ -1,4 +1,4 @@
-package com.dialogwizardlib.lib;
+package com.dialog.dialogwizardlib;
 
 import android.app.Activity;
 import android.graphics.Rect;

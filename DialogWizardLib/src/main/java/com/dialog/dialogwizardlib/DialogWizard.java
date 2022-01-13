@@ -1,8 +1,8 @@
-package com.dialogwizardlib.lib;
+package com.dialog.dialogwizardlib;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.dialogwizardlib.lib.libcore.DialogParentView;
+import com.dialog.dialogwizardlib.core.DialogParentView;
 
 public class DialogWizard {
 

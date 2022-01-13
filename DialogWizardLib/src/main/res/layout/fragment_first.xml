@@ -5,25 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".lib.wizardlayouts.ThirdFragment">
+    tools:context="com.dialog.dialogwizardlib.wizardlayouts.FirstFragment">
 
     <TextView
-        android:id="@+id/textview_third"
+        android:id="@+id/textview_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_third_fragment"
-        app:layout_constraintBottom_toBottomOf="@id/button_third"
+        android:text="@string/hello_first_fragment"
+        app:layout_constraintBottom_toBottomOf="@id/button_first"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_third"
+        android:id="@+id/button_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/previous"
+        android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_third" />
+        app:layout_constraintTop_toBottomOf="@id/textview_first" />
 </androidx.constraintlayout.widget.ConstraintLayout>

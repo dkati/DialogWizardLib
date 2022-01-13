@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.dialogwizardlib.lib.wizardlayouts.FirstFragment"
+        android:name="com.dialog.dialogwizardlib.wizardlayouts.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.dialogwizardlib.lib.wizardlayouts.SecondFragment"
+        android:name="com.dialog.dialogwizardlib.wizardlayouts.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
@@ -39,7 +39,7 @@
 
     <fragment
         android:id="@+id/ThirdFragment"
-        android:name="com.dialogwizardlib.lib.wizardlayouts.ThirdFragment"
+        android:name="com.dialog.dialogwizardlib.wizardlayouts.ThirdFragment"
         android:label="@string/third_fragment_label"
         tools:layout="@layout/fragment_third">
 

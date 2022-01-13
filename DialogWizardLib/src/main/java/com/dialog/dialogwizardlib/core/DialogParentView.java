@@ -1,4 +1,4 @@
-package com.dialogwizardlib.lib.libcore;
+package com.dialog.dialogwizardlib.core;
 
 import android.app.Dialog;
 import android.graphics.Color;
@@ -15,9 +15,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-import com.dialogwizardlib.R;
-import com.dialogwizardlib.databinding.DialogwizardlibParentBinding;
-import com.dialogwizardlib.lib.Utils;
+import com.dialog.dialogwizardlib.R;
+import com.dialog.dialogwizardlib.Utils;
+import com.dialog.dialogwizardlib.databinding.DialogwizardlibParentBinding;
+
 
 public class DialogParentView extends DialogFragment {
 
@@ -39,7 +40,7 @@ public class DialogParentView extends DialogFragment {
                 thisWindow.setLayout(width, height);
                 WindowManager.LayoutParams windowParams = thisWindow.getAttributes();
                 windowParams.dimAmount = 0.0f;
-                windowParams.windowAnimations = R.style.Theme_DialogWizardLibInternal;
+                windowParams.windowAnimations = R.style.Theme_DialogWizardLib;
                 thisWindow.setAttributes(windowParams);
                 thisWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 

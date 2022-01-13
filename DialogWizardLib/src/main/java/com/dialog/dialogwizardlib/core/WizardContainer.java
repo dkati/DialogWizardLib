@@ -1,4 +1,4 @@
-package com.dialogwizardlib.lib.libcore;
+package com.dialog.dialogwizardlib.core;
 
 import android.app.Dialog;
 import android.graphics.Color;
@@ -17,9 +17,9 @@ import androidx.fragment.app.DialogFragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.dialogwizardlib.R;
-import com.dialogwizardlib.databinding.DialogwizardlibWizardContainerBinding;
-import com.dialogwizardlib.lib.Utils;
+import com.dialog.dialogwizardlib.R;
+import com.dialog.dialogwizardlib.Utils;
+import com.dialog.dialogwizardlib.databinding.DialogwizardlibWizardContainerBinding;
 
 public class WizardContainer extends DialogFragment {
 
@@ -44,7 +44,7 @@ public class WizardContainer extends DialogFragment {
                 thisWindow.setLayout(width, height);
                 WindowManager.LayoutParams windowParams = thisWindow.getAttributes();
                 windowParams.dimAmount = 0.0f;
-                windowParams.windowAnimations = R.style.Theme_DialogWizardLibInternal;
+                windowParams.windowAnimations = R.style.Theme_DialogWizardLib;
                 thisWindow.setAttributes(windowParams);
                 thisWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 

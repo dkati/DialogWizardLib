@@ -1,4 +1,4 @@
-package com.dialogwizardlib.lib.wizardlayouts;
+package com.dialog.dialogwizardlib.wizardlayouts;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,18 +9,16 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.dialogwizardlib.R;
-import com.dialogwizardlib.databinding.FragmentSecondBinding;
+import com.dialog.dialogwizardlib.R;
+import com.dialog.dialogwizardlib.databinding.FragmentSecondBinding;
+
 
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
 
     @Override
-    public View onCreateView(
-            @NonNull LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         return binding.getRoot();
