@@ -11,10 +11,15 @@
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
+        <!--animations here, affects the action-respective fragment
+        so, enterAnim is the animation of second fragment
+        while its coming on the foreground, triggered from first-->
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/SecondFragment"
+            app:enterAnim="@anim/dialog_wizard_slide_in_right"/>
     </fragment>
+
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.dialogwizardlib.lib.wizardlayouts.SecondFragment"
@@ -23,11 +28,13 @@
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            app:destination="@id/FirstFragment"
+            app:enterAnim="@anim/dialog_wizard_slide_in_left"/>
 
         <action
             android:id="@+id/action_SecondFragment_to_ThirdFragment"
-            app:destination="@id/ThirdFragment" />
+            app:destination="@id/ThirdFragment"
+            app:enterAnim="@anim/dialog_wizard_slide_in_right"/>
     </fragment>
 
     <fragment
@@ -36,8 +43,10 @@
         android:label="@string/third_fragment_label"
         tools:layout="@layout/fragment_third">
 
+        <!--no animations on last fragment-->
         <action
             android:id="@+id/action_ThirdFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/SecondFragment"
+            app:enterAnim="@android:anim/slide_in_left"/>
     </fragment>
 </navigation>
