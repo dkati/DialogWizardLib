@@ -12,7 +12,7 @@ import com.dialog.dialogwizardlib.interfaces.FragmentStateListener;
 import com.dialog.dialogwizardlib.interfaces.WizardExitListener;
 
 @SuppressWarnings({"Convert2Lambda"})
-public class BaseFragmentSaveView extends Fragment {
+public class FragmentWizardView extends Fragment {
 
     private FragmentStateListener mFragmentListener;
     private WizardExitListener exitListener;

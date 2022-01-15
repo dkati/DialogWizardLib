@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.dialog.dialogwizardlib.R;
-import com.dialog.dialogwizardlib.core.BaseFragmentSaveView;
+import com.dialog.dialogwizardlib.core.FragmentWizardView;
 import com.dialog.dialogwizardlib.databinding.FragmentFirstBinding;
 
 @SuppressWarnings({"Convert2Lambda"})
-public class FirstFragment extends BaseFragmentSaveView {
+public class FirstFragment extends FragmentWizardView {
 
     private FragmentFirstBinding binding;
     private View mThisView;
