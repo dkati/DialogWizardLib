@@ -17,12 +17,13 @@ import com.dialog.dialogwizardlib.databinding.FragmentSecondBinding;
 public class SecondFragment extends BaseFragmentSaveView {
 
     private FragmentSecondBinding binding;
+    private View mThisView;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentSecondBinding.inflate(inflater, container, false);
-        super.onCreateSavedView(binding.getRoot());
+        mThisView = super.onCreateSavedView(binding.getRoot());
         return binding.getRoot();
 
     }
@@ -33,6 +34,9 @@ public class SecondFragment extends BaseFragmentSaveView {
         binding.buttonSecondPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // save the state when we change fragment
+                saveCurrentViewState(mThisView);
+
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
@@ -41,6 +45,9 @@ public class SecondFragment extends BaseFragmentSaveView {
         binding.buttonSecondNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // save the state when we change fragment
+                saveCurrentViewState(mThisView);
+
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_ThirdFragment);
             }

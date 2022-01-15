@@ -17,11 +17,12 @@ import com.dialog.dialogwizardlib.databinding.FragmentThirdBinding;
 public class ThirdFragment extends BaseFragmentSaveView {
 
     private FragmentThirdBinding binding;
-
+    private View mThisView;
+    
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         binding = FragmentThirdBinding.inflate(inflater, container, false);
-        super.onCreateSavedView(binding.getRoot());
+        mThisView = super.onCreateSavedView(binding.getRoot());
         return binding.getRoot();
     }
 
@@ -31,6 +32,9 @@ public class ThirdFragment extends BaseFragmentSaveView {
         binding.buttonThird.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // save the state when we change fragment
+                saveCurrentViewState(mThisView);
+
                 NavHostFragment.findNavController(ThirdFragment.this)
                         .navigate(R.id.action_ThirdFragment_to_SecondFragment);
             }
