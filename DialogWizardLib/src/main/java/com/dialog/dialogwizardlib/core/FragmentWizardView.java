@@ -38,7 +38,8 @@ public class FragmentWizardView extends Fragment {
             Log.e("BaseFragmentSaveView", "Could not find parent dialog");
     }
 
-    protected View onCreateSavedView(View view,int which) {
+    protected View onCreateSavedView(View view) {
+        int which = Integer.parseInt(String.valueOf(view.getTag()));
         // get the saved view from loaded (regardless if its null or not)
         View v = mFragmentListener.onFragmentViewLoadNow(which);
 

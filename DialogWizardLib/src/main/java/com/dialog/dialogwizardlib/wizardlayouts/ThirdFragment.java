@@ -21,7 +21,7 @@ public class ThirdFragment extends FragmentWizardView {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         binding = FragmentThirdBinding.inflate(inflater, container, false);
-        mThisView = super.onCreateSavedView(binding.getRoot(),2);
+        mThisView = super.onCreateSavedView(binding.getRoot());
         return mThisView;
     }
 

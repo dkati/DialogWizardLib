@@ -21,7 +21,7 @@ public class FirstFragment extends FragmentWizardView {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         binding = FragmentFirstBinding.inflate(inflater, container, false);
-        mThisView = super.onCreateSavedView(binding.getRoot(),0);
+        mThisView = super.onCreateSavedView(binding.getRoot());
         return mThisView;
     }
 
