@@ -2,6 +2,7 @@ package com.dialog.dialogwizardlib.core;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,8 +37,11 @@ public class BaseFragmentSaveView extends Fragment {
     protected void exitWizard() {
         viewSaveListener.onFragmentViewSaveNow(null);
 
-        //NavHostFragment x  = (NavHostFragment) requireActivity().getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
-
+        Fragment f = requireActivity().getSupportFragmentManager().findFragmentByTag("dialogwizardlib_container");
+        if (f != null)
+            requireActivity().getSupportFragmentManager().beginTransaction().remove(f).commitNowAllowingStateLoss();
+        else
+            Log.e("BaseFragmentSaveView", "Could not find parent dialog");
     }
 
     protected View onCreateSavedView(View view) {

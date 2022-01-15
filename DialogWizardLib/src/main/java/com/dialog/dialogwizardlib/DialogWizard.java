@@ -15,6 +15,6 @@ public class DialogWizard {
     }
 
     public void show() {
-        mParent.show(mActivity.getSupportFragmentManager(),"dialogwizardlib");
+        mParent.show(mActivity.getSupportFragmentManager(),"dialogwizardlib_parent");
     }
 }

@@ -70,7 +70,7 @@ public class DialogParentView extends DialogFragment {
         // this second container is needed in order to NOT have empty background while
         // switching fragments
         mContainer = new WizardContainer(this);
-        mContainer.show(requireActivity().getSupportFragmentManager(),"wizardcontainer");
+        mContainer.show(requireActivity().getSupportFragmentManager(),"dialogwizardlib_container");
 
     }
 }
