@@ -32,7 +32,7 @@ public class FirstFragment extends FragmentWizardView {
             @Override
             public void onClick(View view) {
                 // save the state when we change fragment
-                saveCurrentViewState(mThisView,0);
+                saveCurrentViewState(mThisView);
 
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);

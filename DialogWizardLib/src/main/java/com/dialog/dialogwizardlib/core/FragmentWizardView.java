@@ -23,7 +23,8 @@ public class FragmentWizardView extends Fragment {
         exitListener = (WizardExitListener) context;
     }
 
-    protected void saveCurrentViewState(View v,int which) {
+    protected void saveCurrentViewState(View v) {
+        int which = Integer.parseInt(String.valueOf(v.getTag()));
         mFragmentListener.onFragmentViewSaveNow(v,which);
     }
 
