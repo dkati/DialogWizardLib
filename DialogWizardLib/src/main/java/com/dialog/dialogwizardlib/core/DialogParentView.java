@@ -25,37 +25,6 @@ public class DialogParentView extends DialogFragment {
     private DialogwizardlibParentBinding __binder;
     private WizardContainer mContainer;
 
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        Dialog dialog = getDialog();
-        if (dialog != null) {
-            Utils.DisplayTools tools = new Utils.DisplayTools(requireActivity());
-            int width = tools.getScreenRectangle().width();
-            int height = tools.getScreenRectangle().height();
-
-            // block backpress
-            dialog.setCancelable(false);
-
-            if (dialog.getWindow() != null) {
-                Window thisWindow = dialog.getWindow();
-                thisWindow.setLayout(width, height);
-                WindowManager.LayoutParams windowParams = thisWindow.getAttributes();
-                windowParams.dimAmount = 0.0f;
-                windowParams.windowAnimations = R.style.Theme_DialogWizardLib;
-                thisWindow.setAttributes(windowParams);
-                thisWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-                //add start end padding to the whole dialog
-                thisWindow.getDecorView().setPadding(0, 0, 0, 0);
-
-            } else {
-                Log.e("DialogParentView", "Could not attach window");
-            }
-        }
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
