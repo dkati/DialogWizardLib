@@ -22,6 +22,8 @@ public class MainActivity extends BaseActivityFragmentLoader {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.toolbar.setTitle("DialogWizardExample");
+
         //wizard init
         _WizardInitPages(3);
         DialogWizard wizard = new DialogWizard(this);
