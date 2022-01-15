@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.dialog.dialogwizardlib.R;
 import com.dialog.dialogwizardlib.interfaces.FragmentStateListener;
@@ -36,6 +37,11 @@ public class FragmentWizardView extends Fragment {
             requireActivity().getSupportFragmentManager().beginTransaction().remove(f).commitNowAllowingStateLoss();
         else
             Log.e("BaseFragmentSaveView", "Could not find parent dialog");
+    }
+
+    protected void changePage(View currentParent, Fragment f,int action) {
+        saveCurrentViewState(currentParent);
+        NavHostFragment.findNavController(f).navigate(action);
     }
 
     protected View onCreateSavedView(View view) {

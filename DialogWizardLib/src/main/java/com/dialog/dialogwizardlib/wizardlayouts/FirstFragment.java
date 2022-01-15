@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.dialog.dialogwizardlib.R;
 import com.dialog.dialogwizardlib.core.FragmentWizardView;
@@ -31,11 +30,9 @@ public class FirstFragment extends FragmentWizardView {
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // save the state when we change fragment
-                saveCurrentViewState(mThisView);
-
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                // todo: A better appoach like...nextpage() previouspage() ?
+                // save of the instance happens inside->
+                changePage(mThisView,FirstFragment.this,R.id.action_FirstFragment_to_SecondFragment);
             }
         });
     }
