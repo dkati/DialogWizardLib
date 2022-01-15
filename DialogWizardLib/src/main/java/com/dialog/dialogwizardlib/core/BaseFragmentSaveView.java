@@ -7,25 +7,22 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.dialog.dialogwizardlib.interfaces.OnFragmentViewLoadListener;
-import com.dialog.dialogwizardlib.interfaces.OnFragmentViewSaveListener;
+import com.dialog.dialogwizardlib.interfaces.FragmentStateListener;
 import com.dialog.dialogwizardlib.interfaces.WizardExitListener;
 
 public class BaseFragmentSaveView extends Fragment {
 
-    private OnFragmentViewLoadListener viewLoaderListener;
-    private OnFragmentViewSaveListener viewSaveListener;
+    private FragmentStateListener mFragmentListener;
     private WizardExitListener exitListener;
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        viewSaveListener = (OnFragmentViewSaveListener) context;
-        viewLoaderListener = (OnFragmentViewLoadListener) context;
+        mFragmentListener = (FragmentStateListener) context;
         exitListener = (WizardExitListener) context;
     }
 
     protected void saveCurrentViewState(View v,int which) {
-        viewSaveListener.onFragmentViewSaveNow(v,which);
+        mFragmentListener.onFragmentViewSaveNow(v,which);
     }
 
     protected void exitWizard() {
@@ -40,7 +37,7 @@ public class BaseFragmentSaveView extends Fragment {
 
     protected View onCreateSavedView(View view,int which) {
         // get the saved view from loaded (regardless if its null or not)
-        View v = viewLoaderListener.onFragmentViewLoadNow(which);
+        View v = mFragmentListener.onFragmentViewLoadNow(which);
 
         // if the saved view is null (never initialized),use the binder's inflated view
         // keep in mind that loader has to be cleared on Wizard exit

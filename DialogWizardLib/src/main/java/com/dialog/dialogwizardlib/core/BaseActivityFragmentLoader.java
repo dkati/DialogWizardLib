@@ -5,15 +5,14 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.dialog.dialogwizardlib.interfaces.OnFragmentViewLoadListener;
-import com.dialog.dialogwizardlib.interfaces.OnFragmentViewSaveListener;
+import com.dialog.dialogwizardlib.interfaces.FragmentStateListener;
 import com.dialog.dialogwizardlib.interfaces.WizardExitListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @SuppressLint("Registered") // This activity is just a wrapper. No need to be registered to Manifest
-public class BaseActivityFragmentLoader extends AppCompatActivity implements OnFragmentViewSaveListener, OnFragmentViewLoadListener, WizardExitListener {
+public class BaseActivityFragmentLoader extends AppCompatActivity implements FragmentStateListener, WizardExitListener {
 
     private List<View> mFragmentLayouts ;
     private int mCount;
