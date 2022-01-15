@@ -2,12 +2,10 @@ package com.dialogwizardlib.example;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.view.View;
 
 import com.dialog.dialogwizardlib.DialogWizard;
-import com.dialog.dialogwizardlib.core.BaseActivityFragmentLoader;
+import com.dialog.dialogwizardlib.BaseActivityFragmentLoader;
 import com.dialogwizardlib.databinding.ActivityMainBinding;
 
 @SuppressWarnings({"Convert2Lambda"})
@@ -24,6 +22,7 @@ public class MainActivity extends BaseActivityFragmentLoader {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //wizard init
         _WizardInitPages(3);
         DialogWizard wizard = new DialogWizard(this);
 

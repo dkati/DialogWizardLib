@@ -1,4 +1,4 @@
-package com.dialog.dialogwizardlib.core;
+package com.dialog.dialogwizardlib;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import androidx.fragment.app.DialogFragment;
 import com.dialog.dialogwizardlib.databinding.DialogwizardlibParentBinding;
 
 
-public class DialogParentView extends DialogFragment {
+class DialogParentView extends DialogFragment {
 
     @Nullable
     @Override

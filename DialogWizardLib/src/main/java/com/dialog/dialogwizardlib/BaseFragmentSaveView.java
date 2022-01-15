@@ -1,4 +1,4 @@
-package com.dialog.dialogwizardlib.core;
+package com.dialog.dialogwizardlib;
 
 import android.content.Context;
 import android.util.Log;

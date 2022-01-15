@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.dialog.dialogwizardlib.R;
-import com.dialog.dialogwizardlib.core.BaseFragmentSaveView;
+import com.dialog.dialogwizardlib.BaseFragmentSaveView;
 import com.dialog.dialogwizardlib.databinding.FragmentSecondBinding;
 
 @SuppressWarnings({"Convert2Lambda"})

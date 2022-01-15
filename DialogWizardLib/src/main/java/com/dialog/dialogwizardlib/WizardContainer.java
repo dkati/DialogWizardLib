@@ -1,4 +1,4 @@
-package com.dialog.dialogwizardlib.core;
+package com.dialog.dialogwizardlib;
 
 import android.app.Dialog;
 import android.graphics.Color;
@@ -17,12 +17,9 @@ import androidx.fragment.app.DialogFragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.dialog.dialogwizardlib.R;
-import com.dialog.dialogwizardlib.Utils;
 import com.dialog.dialogwizardlib.databinding.DialogwizardlibWizardContainerBinding;
 
-public class WizardContainer extends DialogFragment {
-
+class WizardContainer extends DialogFragment {
 
     private final DialogParentView mParentFragment;
     protected WizardContainer(DialogParentView parentfragment){
