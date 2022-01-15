@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.dialog.dialogwizardlib.R;
-import com.dialog.dialogwizardlib.BaseFragmentSaveView;
+import com.dialog.dialogwizardlib.core.BaseFragmentSaveView;
 import com.dialog.dialogwizardlib.databinding.FragmentThirdBinding;
 
 @SuppressWarnings({"Convert2Lambda"})
@@ -39,12 +39,6 @@ public class ThirdFragment extends BaseFragmentSaveView {
             }
         });
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                exitWizard();
-            }
-        });
     }
 
     @Override

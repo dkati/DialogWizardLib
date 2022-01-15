@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.dialog.dialogwizardlib.R;
-import com.dialog.dialogwizardlib.BaseFragmentSaveView;
+import com.dialog.dialogwizardlib.core.BaseFragmentSaveView;
 import com.dialog.dialogwizardlib.databinding.FragmentFirstBinding;
 
 @SuppressWarnings({"Convert2Lambda"})
@@ -36,13 +36,6 @@ public class FirstFragment extends BaseFragmentSaveView {
 
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
-            }
-        });
-
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                exitWizard();
             }
         });
     }
