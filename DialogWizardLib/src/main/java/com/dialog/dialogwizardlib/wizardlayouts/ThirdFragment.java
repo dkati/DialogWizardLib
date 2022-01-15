@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.dialog.dialogwizardlib.R;
@@ -22,8 +21,8 @@ public class ThirdFragment extends BaseFragmentSaveView {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         binding = FragmentThirdBinding.inflate(inflater, container, false);
-        mThisView = super.onCreateSavedView(binding.getRoot());
-        return binding.getRoot();
+        mThisView = super.onCreateSavedView(binding.getRoot(),2);
+        return mThisView;
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class ThirdFragment extends BaseFragmentSaveView {
             @Override
             public void onClick(View view) {
                 // save the state when we change fragment
-                saveCurrentViewState(mThisView);
+                saveCurrentViewState(mThisView,2);
 
                 NavHostFragment.findNavController(ThirdFragment.this)
                         .navigate(R.id.action_ThirdFragment_to_SecondFragment);

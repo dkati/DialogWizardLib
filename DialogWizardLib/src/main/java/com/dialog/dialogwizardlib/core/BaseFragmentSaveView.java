@@ -1,41 +1,35 @@
 package com.dialog.dialogwizardlib.core;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
-import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 
-import com.dialog.dialogwizardlib.R;
 import com.dialog.dialogwizardlib.interfaces.OnFragmentViewLoadListener;
 import com.dialog.dialogwizardlib.interfaces.OnFragmentViewSaveListener;
+import com.dialog.dialogwizardlib.interfaces.WizardExitListener;
 
 public class BaseFragmentSaveView extends Fragment {
 
     private OnFragmentViewLoadListener viewLoaderListener;
     private OnFragmentViewSaveListener viewSaveListener;
+    private WizardExitListener exitListener;
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         viewSaveListener = (OnFragmentViewSaveListener) context;
         viewLoaderListener = (OnFragmentViewLoadListener) context;
+        exitListener = (WizardExitListener) context;
     }
 
-    protected void saveCurrentViewState(View v) {
-        viewSaveListener.onFragmentViewSaveNow(v);
+    protected void saveCurrentViewState(View v,int which) {
+        viewSaveListener.onFragmentViewSaveNow(v,which);
     }
 
     protected void exitWizard() {
-        viewSaveListener.onFragmentViewSaveNow(null);
+        exitListener.onExit();
 
         Fragment f = requireActivity().getSupportFragmentManager().findFragmentByTag("dialogwizardlib_container");
         if (f != null)
@@ -44,9 +38,9 @@ public class BaseFragmentSaveView extends Fragment {
             Log.e("BaseFragmentSaveView", "Could not find parent dialog");
     }
 
-    protected View onCreateSavedView(View view) {
+    protected View onCreateSavedView(View view,int which) {
         // get the saved view from loaded (regardless if its null or not)
-        View v = viewLoaderListener.onFragmentViewLoadNow();
+        View v = viewLoaderListener.onFragmentViewLoadNow(which);
 
         // if the saved view is null (never initialized),use the binder's inflated view
         // keep in mind that loader has to be cleared on Wizard exit

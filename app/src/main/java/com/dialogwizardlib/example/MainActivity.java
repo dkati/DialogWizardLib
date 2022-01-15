@@ -20,9 +20,11 @@ public class MainActivity extends BaseActivityFragmentLoader {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        _WizardInitPages(3);
         DialogWizard wizard = new DialogWizard(this);
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
