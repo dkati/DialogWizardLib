@@ -35,6 +35,9 @@ public class DialogParentView extends DialogFragment {
             int width = tools.getScreenRectangle().width();
             int height = tools.getScreenRectangle().height();
 
+            // block backpress
+            dialog.setCancelable(false);
+
             if (dialog.getWindow() != null) {
                 Window thisWindow = dialog.getWindow();
                 thisWindow.setLayout(width, height);
@@ -52,7 +55,6 @@ public class DialogParentView extends DialogFragment {
             }
         }
     }
-
 
     @Nullable
     @Override

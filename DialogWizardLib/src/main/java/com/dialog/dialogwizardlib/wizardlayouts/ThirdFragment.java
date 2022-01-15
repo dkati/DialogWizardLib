@@ -10,15 +10,18 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.dialog.dialogwizardlib.R;
+import com.dialog.dialogwizardlib.core.BaseFragmentSaveView;
 import com.dialog.dialogwizardlib.databinding.FragmentThirdBinding;
 
-public class ThirdFragment extends Fragment {
+@SuppressWarnings({"Convert2Lambda"})
+public class ThirdFragment extends BaseFragmentSaveView {
 
     private FragmentThirdBinding binding;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         binding = FragmentThirdBinding.inflate(inflater, container, false);
+        super.onCreateSavedView(binding.getRoot());
         return binding.getRoot();
     }
 
@@ -30,6 +33,13 @@ public class ThirdFragment extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(ThirdFragment.this)
                         .navigate(R.id.action_ThirdFragment_to_SecondFragment);
+            }
+        });
+
+        binding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                exitWizard();
             }
         });
     }

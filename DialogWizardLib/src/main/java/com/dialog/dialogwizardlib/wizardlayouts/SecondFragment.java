@@ -10,10 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.dialog.dialogwizardlib.R;
+import com.dialog.dialogwizardlib.core.BaseFragmentSaveView;
 import com.dialog.dialogwizardlib.databinding.FragmentSecondBinding;
 
-
-public class SecondFragment extends Fragment {
+@SuppressWarnings({"Convert2Lambda"})
+public class SecondFragment extends BaseFragmentSaveView {
 
     private FragmentSecondBinding binding;
 
@@ -21,6 +22,7 @@ public class SecondFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentSecondBinding.inflate(inflater, container, false);
+        super.onCreateSavedView(binding.getRoot());
         return binding.getRoot();
 
     }
@@ -41,6 +43,13 @@ public class SecondFragment extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+            }
+        });
+
+        binding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                exitWizard();
             }
         });
     }

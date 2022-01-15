@@ -18,6 +18,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_second"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        tools:ignore="LabelFor"/>
+
+
     <Button
         android:id="@+id/button_second_prev"
         android:layout_width="wrap_content"
@@ -38,4 +48,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_second" />
 
+    <!-- NEEDED FOR LIB. OTHERWISE CANT EXIT WIZARD -->
+    <!-- exit fab -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="10dp"
+        app:srcCompat="@drawable/ic_close"
+        android:contentDescription="@string/nullstr" />
 </androidx.constraintlayout.widget.ConstraintLayout>

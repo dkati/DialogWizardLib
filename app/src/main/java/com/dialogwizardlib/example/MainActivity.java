@@ -7,9 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.dialog.dialogwizardlib.DialogWizard;
+import com.dialog.dialogwizardlib.core.BaseActivityFragmentLoader;
 import com.dialogwizardlib.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+@SuppressWarnings({"Convert2Lambda"})
+public class MainActivity extends BaseActivityFragmentLoader {
+    // MainActivity (host activity) needs to extends our loader
 
     private ActivityMainBinding binding;
 
